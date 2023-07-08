@@ -31,6 +31,6 @@ public static class ArrayUtils
             }
         }
 
-        throw new ArgumentException("Error: no elements were found whose sum is equal to target");
+        throw new ArgumentException("no elements were found whose sum is equal to target", nameof(nums));
     }
 }
