@@ -6,8 +6,9 @@ public static class ArrayUtils
     {
         if (nums == null || nums.Length == 0)
         {
-            throw new ArgumentException("Error: Array = null or array.Lenght = 0");
+            throw new ArgumentException("Array is null or empty", nameof(nums));
         }
+        
         for (int i = 0; i < nums.Length; i++)
         {
             for (int j = 0; j < nums.Length; j++)
