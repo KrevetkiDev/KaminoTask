@@ -33,6 +33,23 @@ public class ProgramTests
      
        Assert.Equal("Array is null or empty (Parameter 'nums')", exception.Message);
     }
-    
 
+    
+    [Fact]
+    public void GetIndexes_ShouldThrowArgumentException_WhenArrayIsEmphty()
+    {
+        //arrange
+        int[] array = new int[] {};
+        int target = 1;
+
+       //act
+       
+       var exception = Assert.Throws<ArgumentException>(() => ArrayUtils.GetIndexes(array, target));
+
+       //asser
+       Assert.Equal("Array is null or empty (Parameter 'nums')", exception.Message);
+    }
+
+
+   
 }
