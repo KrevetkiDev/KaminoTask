@@ -13,7 +13,8 @@ public class ProgramTests
         //act
         var result = ArrayUtils.GetIndexes(nums, expectedTarget);
         int target = nums[result.Item1] + nums[result.Item2];
-        // assert
+        
+        //assert
         Assert.Equal(expectedTarget, target);
     }
 
@@ -21,17 +22,14 @@ public class ProgramTests
     public void GetIndexes_ShouldThrowArgumentException_WhenArrayIsNull()
     {
         //arrange
-        
         int[] nums = null;
         int target = 1;
 
-     //act
-
+        //act
         var exception = Assert.Throws<ArgumentException>(() => ArrayUtils.GetIndexes(nums, target));
 
-     //asser
-     
-       Assert.Equal("Array is null or empty (Parameter 'nums')", exception.Message);
+        //assert
+        Assert.Equal("Array is null or empty (Parameter 'nums')", exception.Message);
     }
 
     
@@ -43,10 +41,9 @@ public class ProgramTests
         int target = 1;
 
        //act
-       
        var exception = Assert.Throws<ArgumentException>(() => ArrayUtils.GetIndexes(array, target));
 
-       //asser
+       //assert
        Assert.Equal("Array is null or empty (Parameter 'nums')", exception.Message);
     }
 
@@ -62,7 +59,7 @@ public class ProgramTests
         //act
         var exception = Assert.Throws<ArgumentException>(() => ArrayUtils.GetIndexes(nums2, target));
         
-        //asser
+        //assert
         Assert.Equal("no elements were found whose sum is equal to target (Parameter 'nums')", exception.Message);
     }
 }
