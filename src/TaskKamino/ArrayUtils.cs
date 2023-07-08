@@ -21,7 +21,7 @@ public static class ArrayUtils
                     {
                         Console.WriteLine(i);
                         Console.WriteLine(j);
-                        return (first, second);
+                        return (i, j);
                     }
                 }
             }
