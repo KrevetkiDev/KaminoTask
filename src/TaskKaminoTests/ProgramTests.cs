@@ -51,5 +51,18 @@ public class ProgramTests
     }
 
 
-   
+    [Fact]
+
+    public void GetIndexes_ShouldThrowArgumentException_WhenElementsNotFound()
+    {
+        //arrange
+        int[] nums2 = new int[] { 6, 2, 3, 5 };
+        int target = 1;
+        
+        //act
+        var exception = Assert.Throws<ArgumentException>(() => ArrayUtils.GetIndexes(nums2, target));
+        
+        //asser
+        Assert.Equal("no elements were found whose sum is equal to target (Parameter 'nums')", exception.Message);
+    }
 }
