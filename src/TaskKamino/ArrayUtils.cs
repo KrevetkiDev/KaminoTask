@@ -4,6 +4,10 @@ public static class ArrayUtils
 {
     public static (int, int) GetIndexes(int[] nums, int target)
     {
+        if (nums == null || nums.Length == 0)
+        {
+            throw new ArgumentException("Error: Array = null or array.Lenght = 0");
+        }
         for (int i = 0; i < nums.Length; i++)
         {
             for (int j = 0; j < nums.Length; j++)
@@ -19,14 +23,13 @@ public static class ArrayUtils
                     var sum = first + second;
                     if (sum == target)
                     {
-                        Console.WriteLine(i);
-                        Console.WriteLine(j);
+                        
                         return (i, j);
                     }
                 }
             }
         }
 
-        throw new Exception("Error");
+        throw new ArgumentException("Error: no elements were found whose sum is equal to target");
     }
 }
